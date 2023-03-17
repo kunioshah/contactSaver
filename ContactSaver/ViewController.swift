@@ -17,11 +17,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         Contact(name: "Mr Github", phoneNumber: "githubnumber", email: "github@gmail.com")
     ]
     
-    
-    
-    var textArray = ["test1", "test2"]
-    
     override func viewDidLoad() {
+        //loads view, registers table view
         super.viewDidLoad()
         print("view loaded")
         contactTable.register(TableViewCell.nib(), forCellReuseIdentifier: "TableViewCell")
@@ -30,28 +27,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //sets number of rows in tableview
         return contacts.count
-    }
-
-    @IBAction func testButton(_ sender: Any) {
-        print(contacts.count)
-        contactTable.reloadData()
     }
     
     @IBAction func unwindToList(segue: UIStoryboardSegue) {
-            
-        print("i have returned")
-        print(contacts[3].name)
+        //for returning to first cell with done button
         contactTable.reloadData()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //adds table view cells to table view
         let contactCell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
         contactCell.configure(with: contacts[indexPath.row].name, number: contacts[indexPath.row].phoneNumber, email: contacts[indexPath.row].email)
         return contactCell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        //for making cell row size large enough
         return 80
     }
     
