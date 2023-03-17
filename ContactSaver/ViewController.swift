@@ -13,8 +13,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         Contact(name: "Bob", phoneNumber: "111111", email: "bah@gmail.com"),
         Contact(name: "Job", phoneNumber: "121111", email: "bahaha@gmail.com"),
         Contact(name: "Bobby", phoneNumber: "1989111", email: "zahahah@gmail.com"),
-        Contact(name: "Johann", phoneNumber: "5105589", email: "johannm@gmail.com")
+        Contact(name: "Johann", phoneNumber: "5105589", email: "johannm@gmail.com"),
+        Contact(name: "Mr Github", phoneNumber: "githubnumber", email: "github@gmail.com")
     ]
+    
+    
     
     var textArray = ["test1", "test2"]
     
